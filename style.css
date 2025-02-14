@@ -140,3 +140,10 @@ input[type="checkbox"] {
     background-color: #d63384;
 }
 
+.text-center p {
+    font-size: 1.2rem;
+    font-style: italic;
+    font-weight: bold;
+    color: #d63384;
+}
+
