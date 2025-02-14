@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V-day Pasta</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-pink-100 flex items-center justify-center min-h-screen">
+
+    <div class="max-w-lg mx-auto bg-white p-6 rounded-xl shadow-lg">
+        <header class="bg-pink-300 text-white p-6 rounded-lg shadow-md text-center">
+            <h1 class="text-3xl font-bold"> Special Pasta for a Special You </h1>
+            <p class="text-lg"> ~ Made with love!</p>
+        </header>
+
+        <section class="recipe mt-4">
+            <h2 class="text-2xl font-semibold text-center"> 🍝 Delicious Pasta Recipe</h2>
+
+            <!-- Toggle Switch -->
+            <div class="flex items-center justify-center mt-4 gap-3">
+                <span class="text-pink-600 font-semibold">Measure with Love</span>
+                <label class="relative inline-flex items-center cursor-pointer">
+                    <input type="checkbox" id="loveToggle" class="sr-only peer" onclick="toggleHearts()">
+                    <div class="w-11 h-6 bg-gray-300 peer-focus:ring-2 peer-focus:ring-pink-400 rounded-full peer dark:bg-gray-700 peer-checked:bg-pink-500"></div>
+                    <div class="absolute left-1 top-1 w-4 h-4 bg-white border border-gray-300 rounded-full transition-all peer-checked:translate-x-5 peer-checked:border-white"></div>
+                </label>
+            </div>
+
+            <!-- Ingredients List -->
+            <div id="ingredients-list" class="mt-4">
+                <h3 class="text-xl font-semibold text-pink-700 underline">Ingredients:</h3>
+                <ul class="text-lg mt-2 space-y-2">
+                    <li class="ingredient-item"><input type="checkbox"> Angel Hair Pasta [cause the dish is gonna be heavenly] </li>
+                    <li class="ingredient-item"><input type="checkbox"> Cherry Tomatoes </li>
+                    <li class="ingredient-item"><input type="checkbox"> Garlic</li>
+                    <li class="ingredient-item"><input type="checkbox"> Olive Oil</li>
+                    <li class="ingredient-item"><input type="checkbox"> Parmesan Cheese</li>
+                    <li class="ingredient-item"><input type="checkbox"> Basil</li>
+                    <li class="ingredient-item"><input type="checkbox"> Lemon Juice + Zest [optional]</li>
+                </ul>
+            </div>
+
+           <!-- Instructions -->
+<h3 class="text-xl font-semibold text-pink-700 underline mt-6">Instructions:</h3>
+<ul class="recipe-list text-lg space-y-4 mt-2 list-disc list-inside">
+    <li>Boil the pasta until al dente, cause we pro like that</li>
+    <img src="images/boil-pasta.jpg" class="step-image w-full max-w-md mt-2 rounded-lg shadow-md" alt="Boiling Pasta">
+
+    <li>Heat olive oil in a pan and sauté garlic</li>
+    <img src="images/saute-garlic.jpg" class="step-image w-full max-w-md mt-2 rounded-lg shadow-md" alt="Sautéing Garlic">
+
+    <li>Add cherry tomatoes and let them blister away</li>
+    <img src="images/blister-tomatoes.jpg" class="step-image w-full max-w-md mt-2 rounded-lg shadow-md" alt="Blistering Tomatoes">
+
+    <li>Mix in the pasta and toss well</li>
+    <li>Add 1 tbsp of lemon juice and freshly grated lemon zest, if using. Totes fine if not, you won't miss it smh</li>
+    <li>Top with Parmesan and fresh basil.</li>
+    <li>Serve hot and enjoy! [Preferably in a bowl that is a plate that is a bowl] ❤️</li>
+</ul>
+
+
+        </section>
+    </div>
+
+    <!-- JS for Toggle -->
+    <script>
+        function toggleHearts() {
+            let isChecked = document.getElementById("loveToggle").checked;
+            document.querySelectorAll(".ingredient-item").forEach(item => {
+                if (isChecked) {
+                    if (!item.innerHTML.includes("❤️")) {
+                        item.innerHTML = "❤️ " + item.innerHTML;
+                    }
+                } else {
+                    item.innerHTML = item.innerHTML.replace("❤️ ", "");
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>
